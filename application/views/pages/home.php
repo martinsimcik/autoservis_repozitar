@@ -21,20 +21,20 @@ body {
         <h3 class="text-center "><u><b>Něco o nás</b></u></h3>
         <p class="text-center" style = "font-family:Cambria;">
             Jsme rodinný autoservis, který byl založen v roce 2002 novomanželským párem.<br>
-            Začínali jsme zde pouze ve 2, se základním vybavením.<br>
+            Začínali jsme zde pouze v malém počtu, se základním vybavením.<br>
             Jak čas plynul, začínali nám přibývat zákazníci a spolu s nimi jsme začali zaměstnávat nové kolegy.<br>
-            Začali jsme zvětšovat naše prostory a spolu s tím jsme začali shánět nové dodavatele.<br>
-            Podník stále zvkétal až do podoby, ve které je dnes.<br>
+            Postupem času jsme zvětšovali naše prostory a spolu s tím jsme sháněli nové dodavatele.<br>
+            Podnik stále vzkvétal až do podoby, ve které je dnes.<br>
         </p>
         <h3 class="text-center "><u><b>Naše služby</b></u></h3>
         <p class="text-center" style = "font-family:Cambria;">
-            <span>&#183;</span>Máme skvělý tým plný mechaniků a karosářů, který se specializuje na veškeré mechanické opravy.<br>
-            <span>&#183;</span>Výměny autoskel.<br>
-            <span>&#183;</span>Diagnostiku motorů.<br>
-            <span>&#183;</span>Pneuservis<br>
-            <span>&#183;</span>Seřízení geometrie<br>
-            <span>&#183;</span>Prodej náhradních dílů a autopříslušenství<br>
-            <span>&#183;</span>Zajištění odtahové služby
+            máme skvělý tým plný mechaniků a karosářů, který se specializuje na veškeré mechanické opravy<br>
+            výměny autoskel<br>
+            diagnostiku motorů<br>
+            pneuservis<br>
+            seřízení geometrie<br>
+            prodej náhradních dílů a autopříslušenství<br>
+            zajištění odtahové služby
 </p>
 
     </body>
