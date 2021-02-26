@@ -49,28 +49,11 @@ li a {
 
     <?php endforeach; ?>
  
-     
-   
     </ul>
-      <form action="<?php echo base_url("auth/login"); ?>">
-          <style>
-.button {
-  background-color: #ffffff; /* Green */
-  border: none;
-  color: white;
-  padding: 0px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.button4 {border-radius: 6px;}
-</style>
-<button class="button button4" type="submit" style="color:#000000">Přihlásit se</button>
-            
-      </form>
+      
+ <ul class="navbar-nav" class="mb-5 navbar navbar-expand-lg  lighten-1">           
+ <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/login"; ?>'>Přihlásit se</a>  </li>
+ </ul>
   </div>
 </nav>
     </body>
