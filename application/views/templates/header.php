@@ -28,7 +28,7 @@ li a {
     </head>
     
     <body>
-<nav style ="background:#000000"class="mb-5 navbar navbar-expand-lg  lighten-1">
+<nav style ="background:#000000"class=" navbar navbar-expand-lg  lighten-1">
      <div class="navbar-header">
           <a style="color:#ffffff" class="navbar-brand" > Autoservis Šimčík</a>
     </div>

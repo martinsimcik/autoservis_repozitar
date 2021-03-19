@@ -42,14 +42,21 @@ li a {
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
           
-                <?php foreach($polozky as $p): ?>
+                
         <li class ="nav-item">
-        <a class="nav-link" href="<?php echo base_url('pages/')?><?=$p->polozka_menu?>"><?= $p->displej_nazev?><span class="sr-only">(current)</span></a>
+        <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/homeAuth"; ?>'>Domů</a>  </li>
         </li>            
 
-    <?php endforeach; ?>
-</ul>
-      </div>
+        <li class ="nav-item">
+        <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/opravy"; ?>'>Opravy</a>  </li>
+        </li>            
+
+    </ul>
+      
+ <ul class="navbar-nav" class=" navbar navbar-expand-lg  lighten-1">           
+ <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/logout"; ?>'>Odhlásit se</a>  </li>
+ </ul>
+  </div>
 </nav>
     </body>
 </html>

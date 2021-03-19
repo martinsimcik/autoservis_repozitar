@@ -85,7 +85,7 @@ class Auth extends CI_Controller
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect('auth/formular', 'refresh');
+				redirect('auth/opravy', 'refresh');
 			}
 			else
 			{
@@ -898,11 +898,30 @@ class Auth extends CI_Controller
             if($this->ion_auth->logged_in()){
                 $this->load->model('autoservis_model');
                 $data['polozky'] = $this->autoservis_model->get_menu();
-                $this->load->view('templates/header', $data);                
+                $this->load->view('templates/headerlogout', $data);                
 		$this->load->view('pages/formular', $data);  
 		$this->load->view('templates/footer');
         }
-        
             }
-        
+            public function homeAuth()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);                
+		$this->load->view('pages/homeAuth', $data);  
+		$this->load->view('templates/footer');
+        }
+            }
+            public function opravy()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);    
+                $data['oprava'] = $this->db->query('SELECT * FROM oprava')->result();
+		$this->load->view('pages/opravy', $data);  
+		$this->load->view('templates/footer');
+        }
+            }
 }
