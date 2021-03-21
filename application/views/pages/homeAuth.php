@@ -9,9 +9,53 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet/less" type="text/css" href="styles.less">
         <script src="less.js" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+</style>
     </head>
     <body>
         <img src="<?php echo base_url('vendor/fotky/images/car-banner.jpg'); ?>"  alt="Obázek autoservisu"/>
+        <div><br>&nbsp</div>
         <div class="container">
         <h1 class="text-center "><b><i class="fas fa-wrench"></i>Autoservis Šimčík</b></h1>
         <h3 class="text-center "><u><b>Něco o nás</b></u></h3>
@@ -24,16 +68,75 @@
         </p>
         <h3 class="text-center "><u><b>Naše služby</b></u></h3>
         <p class="text-center" style = "font-family:Cambria;">
-        
-            máme skvělý tým plný mechaniků a karosářů, který se specializuje na veškeré mechanické opravy<br>
-            výměny autoskel<br>
-            diagnostiku motorů<br>
-            pneuservis<br>
-            seřízení geometrie<br>
-            prodej náhradních dílů a autopříslušenství<br>
-            zajištění odtahové služby
-            
-        </p>
+        <div class="row">
+  <div class="column">
+    <div class="card">
+      
+      <p>&nbsp</p>
+      <h4>Výměny autoskel</h4>
+      <p>&nbsp</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <p>&nbsp</p>
+      <h4>Diagnostiku motorů</h4>
+      <p>&nbsp</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <p>&nbsp</p>
+      <h4>Seřízení geometrie</h4>
+      <p>&nbsp</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <p>&nbsp</p>
+      <h4>Pneuservis</h4>
+      <p>&nbsp</p>
+    </div>
+  </div>
+</div>
+        <div><br>&nbsp</div>
+        <div class="row">
+  <div class="column">
+    <div class="card">
+      
+      <p>&nbsp</p>
+      <h4>Výměna oleje</h4>
+      <p>&nbsp</p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <p>&nbsp</p>
+      <h4>Seřízení brzd</h4>
+      <p>&nbsp</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <p>&nbsp</p>
+      <h4>Servis světel</h4>
+      <p>&nbsp</p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <p>&nbsp</p>
+      <h4>Opravy autoskel</h4>
+      <p>&nbsp</p>
+    </div>
+  </div>
+</div>
         </div>
     </body>
 </html>

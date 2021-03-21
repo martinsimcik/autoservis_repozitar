@@ -900,7 +900,7 @@ class Auth extends CI_Controller
                 $data['polozky'] = $this->autoservis_model->get_menu();
                 $this->load->view('templates/headerlogout', $data);                
 		$this->load->view('pages/formular', $data);  
-		$this->load->view('templates/footer');
+		
         }
             }
             public function homeAuth()
@@ -921,7 +921,7 @@ class Auth extends CI_Controller
                 $this->load->view('templates/headerlogout', $data);    
                 $data['oprava'] = $this->db->query('SELECT * FROM oprava')->result();
 		$this->load->view('pages/opravy', $data);  
-		$this->load->view('templates/footer');
+		
         }
             }
 }

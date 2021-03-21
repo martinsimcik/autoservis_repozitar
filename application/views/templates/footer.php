@@ -13,7 +13,6 @@
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 <style>
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -22,7 +21,7 @@
   text-align: center;
 }
 </style>
-
+<p>&nbsp</p>
 <div class="footer">
     <p2><i class="fas fa-phone"></i> +420 750 180 790 <i class="fa fa-envelope" aria-hidden="true"></i> autoservis@simcik.cz 
         <em class="text"><i class="far fa-address-card"></i>Martin Šimčík 2020/21</em>
