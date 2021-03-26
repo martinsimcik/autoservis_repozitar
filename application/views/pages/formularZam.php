@@ -2,19 +2,18 @@
     $connect = mysqli_connect("localhost","root","","autoservis");
     if(isset($_POST['submitinserdetails'])) {
         
-        $datum = $_POST['datum'];
-        $zavada = $_POST['zavada'];
-        $cas = $_POST['cas'];
-        $naklady = $_POST['naklady'];
+        $jmeno = $_POST['jmeno'];
+        $prijmeni = $_POST['prijmeni'];
+        $osobni_cislo = $_POST['osobni_cislo'];
         
-    if(!empty($datum) && !empty($zavada) && !empty($cas) && !empty($naklady) )   {
+    if(!empty($jmeno) && !empty($prijmeni) && !empty($osobni_cislo))   {
     
         
-        $sql = "INSERT INTO `oprava`(`datum`, `zavada`, `cas`, `naklady`)"
-                               . " VALUES ('$datum','$zavada','$cas','$naklady')" ;
+        $sql = "INSERT INTO `zamestnanec`(`jmeno`, `prijmeni`, `osobni_cislo`)"
+                               . " VALUES ('$jmeno','$prijmeni','$osobni_cislo')" ;
     $qry = mysqli_query($connect, $sql);
     if($qry){
-        echo "Oprava byla úspěšně zapsána";
+        echo "Zákazník byl úspěšně přidán";
     }   
         
     } else {
@@ -28,7 +27,7 @@
 ?>
 <html>
     <head>
-        <title>Formulář</title>
+        <title>Formulář zákaznící</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -64,17 +63,15 @@ input[type=submit]:hover {
 </style>
     </head>
     <body>
-        <h2>Zápis opravy</h2>
+        <h2>Zápis zaměstnance</h2>
         <form action="" method="POST">
             
-            <label for="datum">Datum opravy:</label>
-<input type="text" name="datum">
-<label for="zavada">Závada:</label>
-<input type="text" name="zavada">
-<label for="cas">Čas opravy:</label>
-<input type="text" name="cas">
-<label for="naklady">Náklady:</label>
-<input type="text" name="naklady" >
+            <label for="jmeno">Jméno:</label>
+<input type="text" name="jmeno">
+<label for="prijmeni">Příjmení:</label>
+<input type="text" name="prijmeni">
+<label for="adresa">Osobní číslo:</label>
+<input type="text" name="osobni_cislo">
 <input type="submit" name="submitinserdetails" value="Odeslat">
 </form>
     </body>

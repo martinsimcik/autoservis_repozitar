@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Formulář</title>
+        <title>Zaměstnanci</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -48,10 +48,10 @@ body {
   text-align: center;
   background-color: #f1f1f1;
 }
-</style>    
+</style>  
     </head>
     <body>
-        <div><style>
+        <style>
             .vertical-center {
   
   position: absolute;
@@ -60,37 +60,30 @@ body {
 
 }
 </style>
-<div class="container">
+        <div class="container">
   <div class="vertical-center">
-        <a href="<?php echo base_url() . "auth/formular"; ?>" class="btn btn-dark" class="vertical-center">Sepsání opravy</a>
+        <a href="<?php echo base_url() . "auth/formularZam"; ?>" class="btn btn-dark" class="vertical-center">Zapsání zaměstnanců</a>
         
-  </div>
-        
-
+  </div> 
 
  <div><br>&nbsp</div>
   <div><br>&nbsp</div>
   <div class="container" class="text-center">
-<h1>Seznam provedených oprav</h1>
-    
-
+<h1>Seznam zaměstnanců</h1>
 <div class="row">
-                   <?php foreach ($oprava as $oprav) { ?>
+                   <?php foreach ($zamestnanec as $zame) { ?>
 
     <div class="col">
         
-    <div class="card" style="width: 18rem; height: 13rem;">
-            <h4>Závada: <?= $oprav->zavada; ?></h4>
-                <p>Datum opravy: <?= $oprav->datum; ?></p>
-                <p>Čas opravy: <?= $oprav->cas; ?></p>
-                <p>Náklady: <?= $oprav->naklady; ?></p>   
+    <div class="card" style="width: 18rem; height: 7rem;">
+            <h4>Jméno: <?= $zame->jmeno; ?> <?= $zame->prijmeni; ?></h4>
+                <p>Osobní číslo: <?= $zame->osobni_cislo; ?></p>
     </div>
         <p>&nbsp</p>
   </div>
     <?php } ?>
     </div>
-</div>
-</div>
+  </div>
         </div>
-    </body>
+        </body>
 </html>

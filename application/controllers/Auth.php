@@ -924,4 +924,46 @@ class Auth extends CI_Controller
 		
         }
             }
+            public function zakaznici()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);    
+                $data['majitel'] = $this->db->query('SELECT * FROM majitel')->result();
+		$this->load->view('pages/zakaznici', $data);  
+		
+        }
+            }
+            public function formularZak()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);                
+		$this->load->view('pages/formularZak', $data);  
+		
+        }
+            }
+            public function zamestnanci()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);    
+                $data['zamestnanec'] = $this->db->query('SELECT * FROM zamestnanec')->result();
+		$this->load->view('pages/zamestnanci', $data);  
+		
+        }
+            }
+            public function formularZam()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);                
+		$this->load->view('pages/formularZam', $data);  
+		
+        }
+            }
 }

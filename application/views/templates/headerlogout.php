@@ -49,7 +49,15 @@ li a {
 
         <li class ="nav-item">
         <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/opravy"; ?>'>Opravy</a>  </li>
-        </li>            
+        </li>     
+        
+        <li class ="nav-item">
+        <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/zakaznici"; ?>'>Zákazníci</a>  </li>
+        </li>  
+        
+        <li class ="nav-item">
+        <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/zamestnanci"; ?>'>Zaměstnanci</a>  </li>
+        </li>
 
     </ul>
       
