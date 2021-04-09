@@ -59,12 +59,41 @@ body {
   right: 22%;
 
 }
+.vertical-center-b {
+  
+  position: absolute;
+  bottom: 78%;
+  right: 34%;
+
+}
+.vertical-center-C {
+  
+  position: absolute;
+  bottom: 78%;
+  right: 46%;
+
+}
+.hlava
+{
+   position: absolute;
+   right: 85%;
+   top:0%;
+   font-size: 15px;
+}
 </style>
         <div class="container">
   <div class="vertical-center">
         <a href="<?php echo base_url() . "auth/formularZam"; ?>" class="btn btn-dark" class="vertical-center">Zapsání zaměstnanců</a>
         
   </div> 
+            <div class="vertical-center-b">
+        <a href="<?php echo base_url() . "auth/upZamestnancu"; ?>" class="btn btn-dark" class="vertical-center">Upravit zaměstnance</a>
+        
+  </div>
+            <div class="vertical-center-c">
+        <a href="<?php echo base_url() . "auth/php_delete_data_from_mysql_database"; ?>" class="btn btn-dark" class="vertical-center">Smazat</a>
+        
+  </div>
 
  <div><br>&nbsp</div>
   <div><br>&nbsp</div>
@@ -76,6 +105,7 @@ body {
     <div class="col">
         
     <div class="card" style="width: 18rem; height: 7rem;">
+        <p class="hlava">ID:<?= $zame->id; ?></p> 
             <h4>Jméno: <?= $zame->jmeno; ?> <?= $zame->prijmeni; ?></h4>
                 <p>Osobní číslo: <?= $zame->osobni_cislo; ?></p>
     </div>

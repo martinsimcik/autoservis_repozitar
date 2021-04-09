@@ -945,14 +945,14 @@ class Auth extends CI_Controller
 		
         }
             }
-            public function zamestnanci()
+            public function all_records()
         {
             if($this->ion_auth->logged_in()){
                 $this->load->model('autoservis_model');
                 $data['polozky'] = $this->autoservis_model->get_menu();
                 $this->load->view('templates/headerlogout', $data);    
                 $data['zamestnanec'] = $this->db->query('SELECT * FROM zamestnanec')->result();
-		$this->load->view('pages/zamestnanci', $data);  
+		$this->load->view('pages/all_records', $data);  
 		
         }
             }
@@ -966,4 +966,42 @@ class Auth extends CI_Controller
 		
         }
             }
-}
+            
+    public function upZamestnancu()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);                
+		$this->load->view('pages/upZamestnancu', $data);  
+		
+        }
+            }
+            public function upZakazniku()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);                
+		$this->load->view('pages/upZakazniku', $data);  
+		
+            }
+
+        }
+        
+        public function delete($id)
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerlogout', $data);                
+                $this->db->query("DELETE FROM `zamestnanec` WHERE `id` = $id");
+                $this->load->view('pages/formularZam', $data); 
+            }
+
+        }
+
+
+            }
+
+

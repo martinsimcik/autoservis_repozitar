@@ -56,9 +56,9 @@ li a {
         </li>  
         
         <li class ="nav-item">
-        <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/zamestnanci"; ?>'>Zaměstnanci</a>  </li>
+        <li class="nav-item"> <a class="nav-link"<a href='<?php echo base_url() . "auth/all_records"; ?>'>Zaměstnanci</a>  </li>
         </li>
-
+        
     </ul>
       
  <ul class="navbar-nav" class=" navbar navbar-expand-lg  lighten-1">           

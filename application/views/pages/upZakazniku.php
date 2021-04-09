@@ -1,41 +1,43 @@
 <?php
-    $connect = mysqli_connect("localhost","root","","autoservis");
-    if(isset($_POST['submitinserdetails'])) {
-        
-        $jmeno = $_POST['jmeno'];
-        $prijmeni = $_POST['prijmeni'];
-        $adresa = $_POST['adresa'];
-        $telefon = $_POST['telefon'];
-        $email = $_POST['email'];
-        
-    if(!empty($jmeno) && !empty($prijmeni) && !empty($adresa) && !empty($telefon) && !empty($email) )   {
+$connection = mysqli_connect("localhost","root","");
+$db = mysqli_select_db($connection,'autoservis');
+
+if(isset($_POST['update']))
+{
+    $id = $_POST['id'];
     
-        
-        $sql = "INSERT INTO `majitel`(`jmeno`, `prijmeni`, `adresa`, `telefon`, `email`)"
-                               . " VALUES ('$jmeno','$prijmeni','$adresa','$telefon','$email')" ;
-    $qry = mysqli_query($connect, $sql);
-    if($qry){
-        echo "<p style='color:#ffffff;text-align:center'>Zákazník byl úspěšně přidán!</p>";
-    }   
-        
-    } else {
-        echo "<p style='color:#ffffff;text-align:center'>Všechny kolonky musí být vyplněné!</p>";
+    $query = "UPDATE majitel SET jmeno='$_POST[jmeno]',prijmeni='$_POST[prijmeni]',adresa='$_POST[adresa]',telefon='$_POST[telefon]',email='$_POST[email]' where id='$_POST[id]' ";
+    $query_run = mysqli_query($connection,$query);
+    
+    if($query_run)
+    {
+        echo "<p style='color:#ffffff;text-align:center'>Data byla upravena!</p>";
     }
-        
-    
-    
+    else
+    {
+        echo "<p style='color:#ffffff;text-align:center'>Data nebyla upravena!</p>";
     }
-    
+}
 ?>
 <html>
     <head>
-        <title>Formulář zákaznící</title>
+        <title>Autoservis</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.9/css/mdb.min.css" rel="stylesheet">
     <style>
 html {
   height: 100%;
@@ -214,31 +216,39 @@ body {
 </style>
     </head>
     <body>
-        <div class="box">
-            <h2>Zápis zákazníka</h2>
+        <center>
+            <div class="box">
+        <h1 style="color:#ffffff"> Úprava dat o zákaznících</h1>
         <form action="" method="POST">
             <div class="user-box">
-<input type="text" name="jmeno" required="">
-<label for="jmeno">Jméno:</label>
+            <input type="text" name="id" required=""/><br/>
+            <label for="id">ID:</label>
             </div>
             <div class="user-box">
-<input type="text" name="prijmeni" required="">
-<label for="prijmeni">Příjmení:</label>
+            <input type="text" name="jmeno" required=""/><br/>
+            <label for="jmeno">Jméno:</label>
             </div>
             <div class="user-box">
-<input type="text" name="adresa" required="">
-<label for="adresa">Adresa:</label>
+            <input type="text" name="prijmeni" required=""/><br/>
+            <label for="prijmeni">Příjmení:</label>
             </div>
             <div class="user-box">
-<input type="text" name="telefon" required="">
-<label for="telefon">Telefon:</label>
+            <input type="text" name="adresa" required=""/><br/>
+            <label for="adresa">Adresa:</label>
             </div>
             <div class="user-box">
-<input type="text" name="email" required="">
-<label for="email">Email:</label>
+            <input type="text" name="telefon" required=""/><br/>
+            <label for="telefon">Telefon:</label>
             </div>
-<input type="submit" class="btn btn-dark" class="vertical-center" name="submitinserdetails" value="Odeslat">
-</form>
-    </div>
+            <div class="user-box">
+            <input type="text" name="email" required=""/><br/>
+            <label for="email">Email:</label>
+            </div>
+            <input type="submit" class="btn btn-dark" class="vertical-center" name="update" value="Upravit data">
+        </form>
+            </div>
+    </center>
     </body>
 </html>
+
+

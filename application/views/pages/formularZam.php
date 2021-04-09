@@ -13,11 +13,11 @@
                                . " VALUES ('$jmeno','$prijmeni','$osobni_cislo')" ;
     $qry = mysqli_query($connect, $sql);
     if($qry){
-        echo "Zákazník byl úspěšně přidán";
+        echo "<p style='color:#ffffff;text-align:center'>Zaměstnanec byl úspěšně přidán!</p>";
     }   
         
     } else {
-        echo "Všechny kolonky musí být vyplněné";
+        echo "<p style='color:#ffffff;text-align:center'>Všechny kolonky musí být vyplněné!</p>";
     }
         
     
@@ -27,7 +27,7 @@
 ?>
 <html>
     <head>
-        <title>Formulář zákaznící</title>
+        <title>Formulář zaměstnanci</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -202,6 +202,13 @@ body {
     bottom: 100%;
   }
 }
+.vertical-center {
+  
+  position: absolute;
+  bottom: 78%;
+  right: 22%;
+
+}
 </style>
     </head>
     <body>
@@ -220,7 +227,7 @@ body {
 <input type="text" name="osobni_cislo" required="">
 <label for="osobni_cislo">Osobní číslo:</label>
             </div>
-<input type="submit" name="submitinserdetails" value="Odeslat">
+<input type="submit" class="btn btn-dark" class="vertical-center" name="submitinserdetails" value="Odeslat">
 </form>
     </div>
     </body>

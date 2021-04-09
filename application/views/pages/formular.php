@@ -14,11 +14,11 @@
                                . " VALUES ('$datum','$zavada','$cas','$naklady')" ;
     $qry = mysqli_query($connect, $sql);
     if($qry){
-        echo "Oprava byla úspěšně zapsána";
+        echo "<p style='color:#ffffff;text-align:center'>Oprava byla úspěšně zapsána!</p>";
     }   
         
     } else {
-        echo "Všechny kolonky musí být vyplněné";
+        echo "<p style='color:#ffffff;text-align:center'>Všechny kolonky musí být vyplněné!</p>";
     }
         
     
@@ -203,6 +203,13 @@ body {
     bottom: 100%;
   }
 }
+.vertical-center {
+  
+  position: absolute;
+  bottom: 78%;
+  right: 22%;
+
+}
 </style>
     </head>
     <body>
@@ -226,7 +233,7 @@ body {
 <input type="text" name="naklady" required="">
 <label for="naklady">Náklady:</label>
             </div>
-<input type="submit" name="submitinserdetails" value="Odeslat">
+<input type="submit" class="btn btn-dark" class="vertical-center" name="submitinserdetails" value="Odeslat">
 </form>
     </div>
     </body>
