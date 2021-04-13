@@ -967,27 +967,6 @@ class Auth extends CI_Controller
         }
             }
             
-    public function upZamestnancu()
-        {
-            if($this->ion_auth->logged_in()){
-                $this->load->model('autoservis_model');
-                $data['polozky'] = $this->autoservis_model->get_menu();
-                $this->load->view('templates/headerlogout', $data);                
-		$this->load->view('pages/upZamestnancu', $data);  
-		
-        }
-            }
-            public function upZakazniku()
-        {
-            if($this->ion_auth->logged_in()){
-                $this->load->model('autoservis_model');
-                $data['polozky'] = $this->autoservis_model->get_menu();
-                $this->load->view('templates/headerlogout', $data);                
-		$this->load->view('pages/upZakazniku', $data);  
-		
-            }
-
-        }
         
         public function delete($id)
         {
@@ -1000,8 +979,58 @@ class Auth extends CI_Controller
             }
 
         }
+        public function update($id)
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $e = $this->input->post('jmeno');
+                $p = $this->input->post('prijmeni');
+                $m = $this->input->post('osobni_cislo');
+                $this->load->view('templates/headerlogout', $data);  
+                $this->load->view('pages/formularZam', $data); 
+                $this->db->query("UPDATE zamestnanec SET jmeno='$e', prijmeni='$p', osobni_cislo='$m' WHERE id='$id'");
+                
+            }
+            
+        }
+        
+public function uprava($id)
+{
+    
+                    $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                    $this->load->view('templates/headerlogout', $data);                
 
+$this->load->view('pages/update', $id);     
+}
 
+        public function updateZak($id)
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $o = $this->input->post('jmeno');
+                $i = $this->input->post('prijmeni');
+                $a = $this->input->post('adresa');
+                $n = $this->input->post('telefon');
+                $l = $this->input->post('email');
+                $this->load->view('templates/headerlogout', $data);  
+                $this->load->view('pages/formularZak', $data); 
+                $this->db->query("UPDATE majitel SET jmeno='$o', prijmeni='$i', adresa='$a', telefon='$n', email='$l' WHERE id='$id'");
+                
+            }
+            
+        }
+        public function upravaZak($id)
+{
+    
+                    $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                    $this->load->view('templates/headerlogout', $data);                
+
+$this->load->view('pages/updateZak', $id);     
+}
             }
 
 

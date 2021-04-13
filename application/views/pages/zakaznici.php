@@ -66,12 +66,11 @@ body {
   right: 34%;
 
 }
-.hlava
+.spodek
 {
-   position: absolute;
-   right: 89%;
-   top:0%;
-   font-size: 15px;
+    position: absolute;
+    bottom:0%;
+    right: 40%
 }
 </style>
         <div class="container">
@@ -79,33 +78,47 @@ body {
         <a href="<?php echo base_url() . "auth/formularZak"; ?>" class="btn btn-dark" class="vertical-center">Zapsání zákazníka</a>
         
   </div> 
-  <div class="vertical-center-b">
-        <a href="<?php echo base_url() . "auth/upZakazniku"; ?>" class="btn btn-dark" class="vertical-center">Upravit zákazníka</a>
-        
-  </div> 
+  
 
  <div><br>&nbsp</div>
   <div><br>&nbsp</div>
+  <?php
+
+include "dbConn.php"; // Using database connection file here
+
+$records = mysqli_query($db,"select * from majitel"); // fetch data from database
+
+?>
   <div class="container" class="text-center">
 <h1>Seznam zákazníků</h1>
-<div class="row">
-                   <?php foreach ($majitel as $maji) { ?>
 
-    <div class="col">
+<div class="row">
+        <?php while($data = mysqli_fetch_array($records))
+{
+?>
         
+     <div class="col">   
     <div class="card" style="width: 18rem; height: 13rem;">
-        <p class="hlava">ID:<?= $maji->id; ?></p>     
-        <h4>Jméno: <?= $maji->jmeno; ?> <?= $maji->prijmeni; ?></h4>
-                <p>Adresa: <?= $maji->adresa; ?></p>
-                <p>Telefon: <?= $maji->telefon; ?></p>   
-                <p>Email: <?= $maji->email; ?></p>
-                 
+            <h4>Jméno: <?php echo $data['jmeno']; ?> <?php echo$data['prijmeni']; ?></h4>
+                <p>Adresa: <?php echo $data['adresa']; ?></p>
+                <p>Telefon: <?php echo $data['telefon']; ?></p>
+                <p>Email: <?php echo $data['email']; ?></p>
+                <a class ="spodek"href="upravaZak/<?php echo $data['id']; ?>">Upravit</a>
+                
     </div>
-        <p>&nbsp</p>
+         <p>&nbsp</p>
+     </div>
+    <p>&nbsp</p>
+        <?php } ?>
+        
   </div>
-    <?php } ?>
+    <p>&nbsp</p>
     </div>
+<p>&nbsp</p>
   </div>
-        </div>
-        </body>
+</div>
+</body>
 </html>
+
+
+

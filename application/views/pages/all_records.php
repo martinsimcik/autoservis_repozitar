@@ -70,19 +70,19 @@ body {
   right: 46%;
 
 }
-.hlava
-{
-   position: absolute;
-   right: 85%;
-   top:0%;
-   font-size: 15px;
-}
 .spodek
 {
     position: absolute;
     bottom:0%;
-    right: 40%
+    right: 50%
 }
+.spodek-v
+{
+    position: absolute;
+    bottom:0%;
+    right: 30%
+}
+
 </style>  
     </head>
 <body>
@@ -91,10 +91,7 @@ body {
         <a href="<?php echo base_url() . "auth/formularZam"; ?>" class="btn btn-dark" class="vertical-center">Zapsání zaměstnanců</a>
         
   </div> 
-            <div class="vertical-center-b">
-        <a href="<?php echo base_url() . "auth/upZamestnancu"; ?>" class="btn btn-dark" class="vertical-center">Upravit zaměstnance</a>
-        
-  </div>
+            
     <div><br>&nbsp</div>
   <div><br>&nbsp</div>
   <?php
@@ -114,10 +111,10 @@ $records = mysqli_query($db,"select * from zamestnanec"); // fetch data from dat
         
      <div class="col">   
     <div class="card" style="width: 18rem; height: 10rem;">
-        <p class="hlava">ID: <?php echo $data['id']; ?></p> 
             <h4>Jméno: <?php echo $data['jmeno']; ?> <?php echo$data['prijmeni']; ?></h4>
                 <p>Osobní číslo: <?php echo $data['osobni_cislo']; ?></p>
                 <a class ="spodek"href="delete/<?php echo $data['id']; ?>">Smazat</a>
+                <a class ="spodek-v"href="uprava/<?php echo $data['id']; ?>">Upravit</a>
                 
     </div>
          <p>&nbsp</p>
